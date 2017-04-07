@@ -1,6 +1,6 @@
 # Explaination
 
-A JavaScript function to crypt and uncrypt messages with a password.
+It's a JavaScript function to crypt and uncrypt messages with a password.
 
 # How to use
 
