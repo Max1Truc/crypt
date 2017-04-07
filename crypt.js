@@ -1,4 +1,8 @@
 function crypt (message, password, uncrypt=false) {
+    
+	channel = "DEFAULT";
+	alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789àâéêèëîïôöçù',!?.;:=+-()/@%$*? ";
+    
     var extended_password = ((message.length - (message.length % password.length))/password.length) * password;
     var password = password.split("");
     for (i = 0; i < password.length-(message.length % password.length); i++) {
