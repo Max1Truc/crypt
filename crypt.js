@@ -1,20 +1,37 @@
-function crypt (message, password, uncrypt=false) {
+document.write("<p id='temp_global'></p>");
+
+function crypt (message, password) {
+	
+	const alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789אגיךטכמןפצחש',!.;:=+-()/@%$*? abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789אגיךטכמןפצחש',!.;:=+-()/@%$*? ";
     
-    const alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789àâéêèëîïôöçù',!?.;:=+-()/@%$*? ";
-    
-    let extended_password = ((message.length - (message.length % password.length))/password.length) * password;
-    password = password.split("");
-    for (let i = 0; i < password.length-(message.length % password.length); i++) {
-        var tmp = password.pop();
-    };
-    password = password.join("");
-    extended_password = extended_password + password;
+    let extended_password = ((message.length - (message.length % password.length))/password.length) + 1;
+	extended_password = password.repeat(extended_password);
+	
+	
     for (let i = 0; i < message.length; i++) {
-        if (!uncrypt) {
-            message[i] =  alphanumeric_chars[alphanumeric_chars.indexOf(message[i]) + alphanumeric_chars.indexOf(extended_password[i])];
-        } else {
-            message[i] =  alphanumeric_chars[alphanumeric_chars.indexOf(message[i]) - alphanumeric_chars.indexOf(extended_password[i])];
-        };
-    };
-    return message;
+		index_in_alphanumeric_chars = alphanumeric_chars.indexOf(message[i]) + alphanumeric_chars.indexOf(extended_password[i]);
+		document.getElementById("temp_global").innerHTML += alphanumeric_chars[index_in_alphanumeric_chars];
+	};
+	
+	let crypted = document.getElementById("temp_global").innerHTML;
+	document.getElementById("temp_global").innerHTML = "";
+	return crypted;
+};
+
+function uncrypt (crypted_message, password) {
+	
+	const alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789אגיךטכמןפצחש',!.;:=+-()/@%$*? abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789אגיךטכמןפצחש',!.;:=+-()/@%$*? ";
+    
+    let extended_password = ((crypted_message.length - (crypted_message.length % password.length))/password.length) + 1;
+	extended_password = password.repeat(extended_password);
+	
+	
+    for (let i = 0; i < crypted_message.length; i++) {
+		index_in_alphanumeric_chars = (alphanumeric_chars.indexOf(crypted_message[i]) - alphanumeric_chars.indexOf(extended_password[i])) + (alphanumeric_chars.length / 2);
+		document.getElementById("temp_global").innerHTML += alphanumeric_chars[index_in_alphanumeric_chars];
+	};
+	
+	let crypted = document.getElementById("temp_global").innerHTML;
+	document.getElementById("temp_global").innerHTML = "";
+	return crypted;
 };
