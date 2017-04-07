@@ -2,8 +2,6 @@ function crypt (message, password, uncrypt=false) {
     
     const alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789àâéêèëîïôöçù',!?.;:=+-()/@%$*? ";
     
-    let message = message;
-    let password = password;
     let extended_password = ((message.length - (message.length % password.length))/password.length) * password;
     password = password.split("");
     for (let i = 0; i < password.length-(message.length % password.length); i++) {
