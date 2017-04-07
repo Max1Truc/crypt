@@ -1,3 +1,7 @@
+// Script created by Max1Truc
+// Source available on GitHub at https://GitHub.com/Max1Truc/crypt
+// It's under the MIT License
+
 document.write("<p id='temp_global'></p>");
 
 function crypt (message, password) {
