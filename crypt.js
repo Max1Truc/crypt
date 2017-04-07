@@ -18,5 +18,5 @@ function crypt (message, password, uncrypt=false) {
             message[i] =  alphanumeric_chars[alphanumeric_chars.indexOf(message[i]) - alphanumeric_chars.indexOf(extended_password[i])];
         };
     };
-    return window.message;
+    return message;
 };
