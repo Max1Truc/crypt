@@ -6,15 +6,19 @@
 const alphanumeric_chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\"',!.;:=+-()/\\@%$*? ".repeat(2);
 
 function crypt (message, password) {
-    
+    // to make the password string longer
     let extended_password = ((message.length - (message.length % password.length))/password.length) + 1;
     extended_password = password.repeat(extended_password);
+    
+    // initialize the crypted message var
     let crypted = "";
 	
+    // crypt each letter
     for (let i = 0; i < message.length; i++) {
 		index_in_alphanumeric_chars = alphanumeric_chars.indexOf(message[i]) + alphanumeric_chars.indexOf(extended_password[i]);
 		crypted = crypted.concat(alphanumeric_chars[index_in_alphanumeric_chars]);
     };
+    // return
     return crypted;
 };
 
