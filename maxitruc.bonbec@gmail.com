@@ -23,14 +23,19 @@ function crypt (message, password) {
 };
 
 function decrypt (crypted_message, password) {
-	
+    
+    // to make the password string longer
     var extended_password = ((crypted_message.length - (crypted_message.length % password.length))/password.length) + 1;
     extended_password = password.repeat(extended_password);
+    
+    // initialize the decrypted message var
     var decrypted = "";
-	
+
+    // decrypt each letter
     for (var i = 0; i < crypted_message.length; i++) {
 	index_in_alphanumeric_chars = (alphanumeric_chars.indexOf(crypted_message[i]) - alphanumeric_chars.indexOf(extended_password[i])) + (alphanumeric_chars.length / 2);
 	decrypted = decrypted.concat(alphanumeric_chars[index_in_alphanumeric_chars]);
     };
+    // return
     return decrypted;
 };
