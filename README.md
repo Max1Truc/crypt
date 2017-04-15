@@ -8,4 +8,4 @@ Include ```<script src="crypt.js"></script>``` in your HTML code.
 
 In a JavaScript script type ```crypt([message], [password])``` and it will return the crypted message.
 
-To uncrypt, use ```decrypt([message], [password])``` to decrypt a message.
+To decrypt, use ```decrypt([message], [password])``` to decrypt a message.
