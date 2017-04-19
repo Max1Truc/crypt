@@ -1,0 +1,32 @@
+{
+  "name": "crypt",
+  "version": "1.0.0",
+  "description": "It's two JavaScript functions to crypt and decrypt messages with a password.",
+  "main": "crypt.js",
+  "dependencies": {
+    "express": "^4.15.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Max1Truc/crypt.git"
+  },
+  "keywords": [
+    "crypt",
+	"js",
+	"javascript",
+	"html",
+	"nodejs",
+	"password"
+  ],
+  "author": "Max1Truc",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Max1Truc/crypt/issues"
+  },
+  "homepage": "https://github.com/Max1Truc/crypt#readme"
+}
