@@ -12,10 +12,15 @@ function crypt (message, password, decrypt=false) {
 	
     // crypt each letter
     for (var i = 0; i < message.length; i++) {
-		var index_text_letter = message[i].charCodeAt(0),
-		    index_pass_letter = extended_password[i].charCodeAt(0),
-		    crypted_letter = String.fromCharCode(!decrypt?index_text_letter+index_pass_letter:index_text_letter-index_pass_letter);
-		crypted = crypted.concat(crypted_letter);
+	var index_text_letter = message[i].charCodeAt(0),
+	    index_pass_letter = extended_password[i].charCodeAt(0);
+	if (decrypt) {
+	    var symbol = "-";
+	} else {
+	    var symbol = "+";
+	}
+	var crypted_letter = String.fromCharCode(eval("index_text_letter"+symbol+"index_pass_letter"));
+	crypted = crypted.concat(crypted_letter);
     };
     // return
     return crypted;
