@@ -3,17 +3,13 @@
 // It's under the MIT License
 
 function crypt (message, password, decrypt=false) {
-    // to make the password string longer
-    var extended_password = ((message.length - (message.length % password.length))/password.length) + 1;
-    extended_password = password.repeat(extended_password);
-    
     // initialize the crypted message var
     var crypted = "";
 	
     // crypt each letter
     for (var i = 0; i < message.length; i++) {
 	var index_text_letter = message[i].charCodeAt(0),
-	    index_pass_letter = extended_password[i].charCodeAt(0);
+	    index_pass_letter = password[i%password].charCodeAt(0);
 	if (decrypt) {
 	    var symbol = "-";
 	} else {
