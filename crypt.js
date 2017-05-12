@@ -22,5 +22,5 @@ function crypt (message, password, decrypt=false) {
 };
 
 function decrypt (crypted_message, password) {
-    return crypt(crypted_message, password, decrypt=1);
+    return crypt(crypted_message, password, decrypt=true);
 };
