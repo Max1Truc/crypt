@@ -5,16 +5,15 @@
 function crypt (message, password, decrypt=false) {
     // initialize the crypted message var
     var crypted = "";
-	
+    if (decrypt) {
+        var symbol = "-";
+    } else {
+        var symbol = "+";
+    }
     // crypt each letter
     for (var i = 0; i < message.length; i++) {
 	var index_text_letter = message[i].charCodeAt(0),
 	    index_pass_letter = password[i%password].charCodeAt(0);
-	if (decrypt) {
-	    var symbol = "-";
-	} else {
-	    var symbol = "+";
-	}
 	var crypted_letter = String.fromCharCode(eval("index_text_letter"+symbol+"index_pass_letter"));
 	crypted = crypted.concat(crypted_letter);
     };
