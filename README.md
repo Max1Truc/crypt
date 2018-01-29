@@ -4,7 +4,7 @@ These are two JavaScript functions to crypt and decrypt messages with a password
 
 # Demo
 
-A live Demo is available [here](https://max1truc.github.io/crypt/index.html).
+A live Demo is available [here](https://max1truc.github.io/crypt/demo.html).
 
 # How to use
 
