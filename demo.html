@@ -3,6 +3,15 @@
 <html>
   <head>
     <title>Crypt.js Live Demo</title>
+    <style>
+    table {
+      border: 10;
+      border-color: blue;
+    }
+    textarea {
+      width: 100%;
+    }
+    </style>
     <script src="crypt.min.js"></script>
     <script>
     function myCrypt () {
@@ -22,10 +31,10 @@
   </head>
 
   <body>
-    <table border=10 bordercolor=Blue>
+    <table>
         <tr>
        	  <td colspan="3">
-            <textarea width=100% rows=3 cols=38 placeholder="Text to crypt / Decrypted text"></textarea>
+            <textarea rows=3 cols=38 placeholder="Text to crypt / Decrypted text"></textarea>
 	  </td>
         </tr>
         <tr>
@@ -39,7 +48,7 @@
         </tr>
         <tr>
        	  <td colspan="3">
-            <textarea width=100% rows=3 cols=38 placeholder="Text to decrypt / Encrypted text"></textarea>
+            <textarea rows=3 cols=38 placeholder="Text to decrypt / Encrypted text"></textarea>
 	  </td>
         </tr>
     </table>
