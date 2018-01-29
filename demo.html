@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+
 <html>
   <head>
     <title>Crypt.js Live Demo</title>
@@ -19,27 +21,29 @@
     </script>
   </head>
 
-  <body>
+  <body align="center">
     <table>
-      <tr>
-	<td colspan="3">
-          <textarea rows=3 cols=38 placeholder="Text to crypt / Decrypted text"></textarea>
-	</td>
-      </tr>
-      <tr>
-        <td>
-          <button onclick="myCrypt()">Crypt</button>
-	</td><td>
-          <input type=password placeholder="Password">
-	</td><td>
-	  <button onclick="myDecrypt()">Decrypt</button>
-	</td>
-      </tr>
-      <tr>
-	<td colspan="3">
-          <textarea rows=3 cols=38 placeholder="Text to decrypt / Encrypted text"></textarea>
-	</td>
-      </tr>
+      <fieldset>
+        <tr>
+       	  <td colspan="3">
+            <textarea rows=3 cols=38 placeholder="Text to crypt / Decrypted text"></textarea>
+	  </td>
+        </tr>
+        <tr>
+          <td>
+            <button onclick="myCrypt()">Crypt</button>
+	  </td><td>
+            <input type=password placeholder="Password">
+  	  </td><td>
+	    <button onclick="myDecrypt()">Decrypt</button>
+	  </td>
+        </tr>
+        <tr>
+       	  <td colspan="3">
+            <textarea rows=3 cols=38 placeholder="Text to decrypt / Encrypted text"></textarea>
+	  </td>
+        </tr>
+      </fieldset>
     </table>
   </body>
 </html>
