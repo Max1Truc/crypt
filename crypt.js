@@ -2,41 +2,39 @@
 // Source available on GitHub at https://GitHub.com/Max1Truc/crypt
 // It's under the MIT License
 
-'use strict'
-
 function crypt (message, password) {
   // initialize the crypted message var
-  var crypted = ''
+  var crypted = '';
   // crypt each letter
   for (var i = 0; i < message.length; i++) {
-    var indexLetterInText, indexLetterInPass, cryptedLetter
-    indexLetterInText = message[i].charCodeAt(0)
-    indexLetterInPass = password[i % password.length].charCodeAt(0)
-    cryptedLetter = String.fromCharCode(indexLetterInText + indexLetterInPass)
-    crypted = crypted.concat(cryptedLetter)
-  };
+    var indexLetterInText, indexLetterInPass, cryptedLetter;
+    indexLetterInText = message[i].charCodeAt(0);
+    indexLetterInPass = password[i % password.length].charCodeAt(0);
+    cryptedLetter = String.fromCharCode(indexLetterInText + indexLetterInPass);
+    crypted = crypted.concat(cryptedLetter);
+  }
   // return
-  return crypted
+  return crypted;
 }
 
 function decrypt (cryptedMessage, password) {
   // initialize the decrypted message var
-  var decrypted = ''
+  var decrypted = '';
   // decrypt each letter
   for (var i = 0; i < cryptedMessage.length; i++) {
-    var indexLetterInText, indexLetterInPass, decryptedLetter
-    indexLetterInText = cryptedMessage[i].charCodeAt(0)
-    indexLetterInPass = password[i % password.length].charCodeAt(0)
-    decryptedLetter = String.fromCharCode(indexLetterInText - indexLetterInPass)
-    decrypted = decrypted.concat(decryptedLetter)
-  };
+    var indexLetterInText, indexLetterInPass, decryptedLetter;
+    indexLetterInText = cryptedMessage[i].charCodeAt(0);
+    indexLetterInPass = password[i % password.length].charCodeAt(0);
+    decryptedLetter = String.fromCharCode(indexLetterInText - indexLetterInPass);
+    decrypted = decrypted.concat(decryptedLetter);
+  }
   // return
-  return decrypted
+  return decrypted;
 }
 
 // Tests functions, else log it into the console
-var message = 'Hello World !'
-var pass = 'MyPassword'
+var message = 'Hello World !';
+var pass = 'MyPassword';
 if (decrypt(crypt(message, pass), pass) !== message) {
-  console.error('Error in Max1Truc\'s Crypt library !')
+  console.error('Error in Max1Truc\'s Crypt library !');
 }
