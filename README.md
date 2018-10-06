@@ -10,7 +10,7 @@ A live Demo is available [here](https://max1truc.github.io/crypt/demo.html).
 
 ### HTML
 
-Include ```<script src="crypt.min.js"></script>``` in your HTML code. 
+Include ```<script src="crypt.min.js"></script>``` in your HTML code.
 
 In a JavaScript script type ```crypt([message], [password])``` and it will return the crypted message.
 
