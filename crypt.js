@@ -41,7 +41,7 @@ function decrypt(cryptedMessage, password) {
 }
 
 // Tests functions, else log it into the console
-var message = 'Hello World !';
+var message = 'Hello World';
 var pass = 'MyPassword';
 if (decrypt(crypt(message, pass), pass) !== message) {
   console.error('Error in Max1Truc\'s Crypt library !');
