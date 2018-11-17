@@ -8,7 +8,7 @@ function modulo(a, b) {
 
 function crypt(message, password) {
   // ALPHABET, changing it changes characters which are encrypted
-  const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890 ";
+  const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
   // initialize the crypted message var
   var crypted = '';
   // crypt each letter
@@ -25,7 +25,7 @@ function crypt(message, password) {
 
 function decrypt(cryptedMessage, password) {
   // ALPHABET, changing it changes characters which are encrypted
-  const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz01234567890 ";
+  const ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789 ";
   // initialize the decrypted message var
   var decrypted = '';
   // decrypt each letter
@@ -41,8 +41,8 @@ function decrypt(cryptedMessage, password) {
 }
 
 // Tests functions, else log it into the console
-var message = 'Hello World';
-var pass = 'MyPassword';
+var message = 'Hello World, this letter does not work with "2" as a password : I';
+var pass = 'Password 2';
 if (decrypt(crypt(message, pass), pass) !== message) {
   console.error('Error in Max1Truc\'s Crypt library !');
 }
